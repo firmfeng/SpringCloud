@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-ls /sql
 files=$(find /sql -name "*.sql" -exec ls {} \;| grep -v postgres | sort | tr ' ' '|' | tr '\n' ' ')
-printf ${files}
+printf "${files}\n"
 for file in ${files}
 do
     file=$(echo ${file} | tr '|' ' ')
